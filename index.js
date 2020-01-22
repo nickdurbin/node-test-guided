@@ -14,7 +14,7 @@ server.get("/", (req, res) => {
 
 server.get("/hobbits", async (req, res, next) => {
   try {
-    const hobbits = await hobbitsModel.getAll()
+    const hobbits = await hobbitsModel.list()
     res.status(200).json(hobbits)
   } catch (err) {
     next(err)
