@@ -1,6 +1,10 @@
-# Node Server Testing Guided Project
+# Node Testing Guided Project
 
-Guided project for **Node Server Testing** Module.
+Guided project for **Node Testing** Module.
+
+## Prerequisites
+
+- [DB Browser for SQLite](https://sqlitebrowser.org/) installed.
 
 ## Project Setup
 

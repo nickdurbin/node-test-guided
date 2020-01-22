@@ -1,30 +1,25 @@
-// Update with your config settings.
+const sqlite = {
+  client: "sqlite3",
+  useNullAsDefault: true,
+  migrations: {
+    directory: "./data/migrations",
+  },
+  seeds: {
+    directory: "./data/seeds",
+  },
+}
 
 module.exports = {
   development: {
-    client: 'sqlite3',
+    ...sqlite,
     connection: {
-      filename: './data/hobbits.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
+      filename: "./data/dev.db3",
     },
   },
   testing: {
-    client: 'sqlite3',
+    ...sqlite,
     connection: {
-      filename: './data/test.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
+      filename: "./data/test.db3",
     },
   },
-};
+}
