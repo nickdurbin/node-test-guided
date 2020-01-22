@@ -10,13 +10,13 @@ const sqlite = {
 }
 
 module.exports = {
-  development: {
+  dev: {
     ...sqlite,
     connection: {
       filename: "./data/dev.db3",
     },
   },
-  testing: {
+  test: {
     ...sqlite,
     connection: {
       filename: "./data/test.db3",
