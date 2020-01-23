@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "server": "nodemon index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --watch",
+    "server": "cross-env NODE_ENV=dev nodemon index.js",
     "start": "node index.js"
   },
   "dependencies": {
@@ -10,9 +11,12 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3",
+    "cross-env": "6.0.3",
     "jest": "25.1.0",
     "nodemon": "^1.19.4",
     "supertest": "4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

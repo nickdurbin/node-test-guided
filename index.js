@@ -21,6 +21,15 @@ server.get("/hobbits", async (req, res, next) => {
   }
 })
 
+server.post("/hobbits", async (req, res, next) => {
+  try {
+    const hobbit = await hobbitsModel.insert(req.body)
+    res.status(201).json(hobbit)
+  } catch (err) {
+    next(err)
+  }
+})
+
 server.use((err, req, res, next) => {
   console.log("Error:", err)
   res.status(500).json({
@@ -28,6 +37,10 @@ server.use((err, req, res, next) => {
   })
 })
 
-server.listen(port, () => {
-  console.log(`\n=> Server up at http://localhost:${port}\n`)
-})
+if (!module.parent) {
+  server.listen(port, () => {
+    console.log(`\n=> Server up at http://localhost:${port}\n`)
+  })
+}
+
+module.exports = server
